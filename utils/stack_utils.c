@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 14:59:09 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/02 14:59:10 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/04 12:39:38 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_node	*new_node(int val)
 {
-	t_node * head;
+	t_node	*head;
 
 	head = malloc(sizeof(t_node));
 	if (head == NULL)
@@ -24,10 +24,8 @@ t_node	*new_node(int val)
 	return (head);
 }
 
-t_stack	*init_stack(void)
+void	*init_stack(t_stack *head)
 {
-	t_stack * head;
-
 	head = malloc(sizeof(t_stack));
 	if (head == NULL)
 		return (NULL);
@@ -37,13 +35,13 @@ t_stack	*init_stack(void)
 	return (head);
 }
 
-void	push(t_stack * head, int val)
+void	push(t_stack *head, int val)
 {
-	t_node * stack_top;
+	t_node	*stack_top;
 
 	stack_top = new_node(val);
 	if (stack_top == NULL)
-		return;
+		return ;
 	stack_top->next = head->top;
 	if (head->top == NULL)
 		head->bottom = stack_top;
