@@ -18,4 +18,4 @@ RM = rm -f
 
 SRCS =
 
-OBJS =
+OBJS = 
