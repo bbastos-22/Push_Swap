@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "libs/Libft/libft.h"
-# include "libs/Printf/printf.h"
 
 typedef struct s_node
 {
@@ -35,5 +34,6 @@ typedef struct s_stack
 
 
 void	print_error(void);
+t_node	*new_node(int val);
 
 #endif
