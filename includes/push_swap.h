@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:32:58 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/02 15:23:28 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/05 17:03:11 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_node	*new_node(int val);
 t_stack	*init_stack(void);
 void	stack_add(t_stack *head, int val);
 void	free_stack(t_stack *stack);
+int		is_sorted(t_stack *stack);
 
 //push
 void	stack_push(t_stack *src, t_stack *dst);
@@ -61,5 +62,10 @@ void	reverse_rotate(t_stack *stack);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
+
+//parse
+int	has_duplicates(t_stack *stack, int val);
+int	is_in_range(char *str);
+int	is_valid_number(char *str);
 
 #endif
