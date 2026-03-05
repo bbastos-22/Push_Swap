@@ -32,8 +32,34 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-
+//listas e stacks
 void	print_error(void);
 t_node	*new_node(int val);
+t_stack	*init_stack(void);
+void	stack_add(t_stack *head, int val);
+void	free_stack(t_stack *stack);
+
+//push
+void	stack_push(t_stack *src, t_stack *dst);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+
+//swap
+void	swap(t_stack *stack);
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+
+//rotate
+void	rotate(t_stack *stack);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+
+//reverse
+void	reverse_rotate(t_stack *stack);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif

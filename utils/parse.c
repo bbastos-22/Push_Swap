@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 14:59:01 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/02 14:59:12 by bbastos-         ###   ########.fr       */
+/*   Created: 2026/03/04 23:57:45 by bbastos-          #+#    #+#             */
+/*   Updated: 2026/03/05 00:20:54 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_stack *stack)
+int	is_valid_number(char *str)
 {
-	t_node	*tmp;
+	int	i;
 
-	while (stack->top != NULL)
+	i = 0;
+	if (*str == '\0')
+		return (0);
+	if (str[i] == '+' || str[i] == '-')
 	{
-		tmp = stack->top->next;
-		free (stack->top);
-		stack->top = tmp;
+		i++;
+		if(str[i] == '\0')
+			return (0);
 	}
-	free (stack);
+	while (str[i] != '\0')
+	{
+		if(!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

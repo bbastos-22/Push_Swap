@@ -24,8 +24,10 @@ t_node	*new_node(int val)
 	return (head);
 }
 
-void	*init_stack(t_stack *head)
+t_stack	*init_stack(void)
 {
+	t_stack *head;
+
 	head = malloc(sizeof(t_stack));
 	if (head == NULL)
 		return (NULL);
@@ -35,7 +37,7 @@ void	*init_stack(t_stack *head)
 	return (head);
 }
 
-void	push(t_stack *head, int val)
+void	stack_add(t_stack *head, int val)
 {
 	t_node	*stack_top;
 
