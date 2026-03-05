@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 14:59:09 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/04 12:39:38 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/05 17:03:10 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ void	stack_add(t_stack *head, int val)
 		head->bottom = stack_top;
 	head->top = stack_top;
 	head->size++;
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node	*tmp;
+
+	tmp = stack->top;
+	while (tmp->next != NULL)
+	{
+		if (tmp->val > tmp->next->val)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
