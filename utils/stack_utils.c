@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 14:59:09 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/05 17:03:10 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:17:05 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_node	*new_node(int val)
 
 t_stack	*init_stack(void)
 {
-	t_stack *head;
+	t_stack	*head;
 
 	head = malloc(sizeof(t_stack));
 	if (head == NULL)
