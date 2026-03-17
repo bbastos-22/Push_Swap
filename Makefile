@@ -6,7 +6,7 @@
 #    By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/24 14:30:35 by bbastos-          #+#    #+#              #
-#    Updated: 2026/03/05 00:03:06 by bbastos-         ###   ########.fr        #
+#    Updated: 2026/03/17 04:21:39 by bbastos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,9 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -I./includes -I./libs/Libft
 RM = rm -f
 
-SRCS =	srcs/main.c
-		utils/error.c
-		utils/free.c
-		utils/stack_utils.c
+SRCS =	srcs/main.c utils/free.c utils/parse.c 
+		utils/stack_utils.c ops/push.c utils/parse.c\
+		ops/reverse_rotate.c ops/rotate.c srcs/sort.c\
 
 LIBFT = libs/Libft/libft.a
 
@@ -34,12 +33,12 @@ $(LIBFT):
 	make -C libs/Libft
 
 clean:
-    $(RM) $(OBJS)
-    make clean -C libs/Libft
+	$(RM) $(OBJS)
+	$(MAKE) clean -C libs/Libft
 
-fclean: clean
-    $(RM) $(NAME)
-    make fclean -C libs/Libft
+fclean:	clean
+	$(RM) $(NAME)
+	$(MAKE) fclean -C libs/Libft
 
 re: fclean all
 
