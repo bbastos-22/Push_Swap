@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:16:56 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/05 17:03:06 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:22:45 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@ int main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	i = 1;
-	stack_a = init_stack();
-	stack_b = init_stack();
 	if (argc < 2)
 		return (0);
+	stack_a = init_stack();
+	stack_b = init_stack();
 	if ((stack_a == NULL) || (stack_b == NULL))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
 		return (0);
+	}
 	while (i < argc)
 	{
 		if((!is_valid_number(argv[i])) || (!is_in_range(argv[i]))
@@ -41,7 +45,10 @@ int main(int argc, char **argv)
 	if (is_sorted(stack_a))
 	{
 			free_stack(stack_a);
+			free_stack(stack_b);
 			return (0);
 	}
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
