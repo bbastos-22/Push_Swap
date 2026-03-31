@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:51:06 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 18:36:10 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 19:21:16 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sort_three(t_stack *stack_a)
 	int	c;
 	int	max;
 
-	a = stack_a->top->val;
+	a = stack_a->top->val; 
 	b = stack_a->top->next->val;
 	c = stack_a->bottom->val;
 	max = get_max(stack_a);
