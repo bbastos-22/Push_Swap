@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:32:58 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/17 04:22:24 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 18:17:41 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "libs/Libft/libft.h"
+# include "libft.h"
 
 typedef struct s_node
 {
@@ -68,7 +68,15 @@ int		has_duplicates(t_stack *stack, int val);
 int		is_in_range(char *str);
 int		is_valid_number(char *str);
 
+//auxiliares algoritmo
+int		get_pos(t_stack *stack, int value);
+int		get_max(t_stack *stack);
+int		get_min(t_stack *stack);
+
 //algoritmo
+void	sort_dispatcher(t_stack *stack_a, t_stack *stack_b);
 void	sort_three(t_stack *stack_a);
+void	sort_five(t_stack *stack_a, t_stack *stack_b);
+void	sort_large(t_stack *stack_a, t_stack *stack_b);
 
 #endif

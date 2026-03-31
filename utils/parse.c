@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 23:57:45 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/05 16:24:28 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 18:35:56 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	is_valid_number(char *str)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		i++;
-		if(str[i] == '\0')
+		if (str[i] == '\0')
 			return (0);
 	}
 	while (str[i] != '\0')
 	{
-		if(!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
