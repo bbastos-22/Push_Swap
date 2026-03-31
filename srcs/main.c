@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:16:56 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/12 15:22:45 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 18:49:12 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	while (i < argc)
 	{
-		if((!is_valid_number(argv[i])) || (!is_in_range(argv[i]))
+		if ((!is_valid_number(argv[i])) || (!is_in_range(argv[i]))
 			|| (has_duplicates(stack_a, ft_atoi(argv[i]))))
 		{
 			print_error();
@@ -48,6 +48,7 @@ int main(int argc, char **argv)
 			free_stack(stack_b);
 			return (0);
 	}
+	sort_dispatcher(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
