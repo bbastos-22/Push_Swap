@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:32:58 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 18:17:41 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 20:08:01 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int		is_valid_number(char *str);
 int		get_pos(t_stack *stack, int value);
 int		get_max(t_stack *stack);
 int		get_min(t_stack *stack);
+int		get_rank(t_stack *stack, int value);
 
 //algoritmo
 void	sort_dispatcher(t_stack *stack_a, t_stack *stack_b);

@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:51:06 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 19:21:16 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/03/31 21:41:17 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,6 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_large(t_stack *stack_a, t_stack *stack_b)
 {
-		
+		int	chunk;
+		int	pushed;
 }
