@@ -6,7 +6,7 @@
 #    By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/24 14:30:35 by bbastos-          #+#    #+#              #
-#    Updated: 2026/03/31 18:18:32 by bbastos-         ###   ########.fr        #
+#    Updated: 2026/04/15 20:54:50 by bbastos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ RM = rm -f
 
 SRCS =	srcs/main.c utils/free.c utils/parse.c\
 		utils/stack_utils.c ops/push.c ops/swap.c\
-		ops/reverse_rotate.c ops/rotate.c srcs/sort.c\
-		utils/stack_helpers.c
-
+		ops/reverse_rotate.c ops/rotate.c utils/stack_helpers.c\
+		algorithm/sort.c algorithm/sort_helpers.c algorithm/sort_large_helpers.c\
+ 
 LIBFT = libs/Libft/libft.a
 
 OBJS = $(SRCS:.c=.o)
@@ -44,5 +44,11 @@ fclean:	clean
 	$(MAKE) fclean -C libs/Libft
 
 re: fclean all
+
+
+tester:		## Run the tester script
+	@echo "   $(B)$(CYA)Running Push Swap Tester$(D)"
+	@curl https://raw.githubusercontent.com/hu8813/tester_push_swap/main/pstester.py | python3 -
+ 
 
 .PHONY: all clean fclean re

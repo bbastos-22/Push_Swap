@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:14:26 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 20:08:07 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:49:31 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,24 @@ int	get_min(t_stack *stack)
 	return (min);
 }
 
-int	get_rank(t_stack *stack, int value)
+int	get_rank(t_stack *stack_a, t_stack *stack_b, int value)
 {
 	int		rank;
 	t_node	*tmp;
 
 	rank = 0;
-	tmp = stack->top;
+	tmp = stack_a->top;
 	while (tmp != NULL)
 	{
 		if (tmp->val < value)
-			rank = rank + 1;
+			rank++;
+		tmp = tmp->next;
+	}
+	tmp = stack_b->top;
+	while (tmp != NULL)
+	{
+		if (tmp->val < value)
+			rank++;
 		tmp = tmp->next;
 	}
 	return (rank);

@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 11:34:59 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 18:46:17 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/04/15 18:32:49 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size > 0)
 	{
- 		stack_push(stack_a, stack_b);
+		stack_push(stack_a, stack_b);
 		write(1, "pb\n", 3);
 	}
 }

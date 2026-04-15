@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:51:06 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 21:41:17 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:47:12 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,67 +44,28 @@ void	sort_three(t_stack *stack_a)
 	int	c;
 	int	max;
 
-	a = stack_a->top->val; 
+	a = stack_a->top->val;
 	b = stack_a->top->next->val;
 	c = stack_a->bottom->val;
 	max = get_max(stack_a);
 	if (a == max)
-	{
-		if (b < c)
-			ra(stack_a);
-		else
-		{
-			sa(stack_a);
-			rra(stack_a);
-		}
-	}
+		sort_three_max_top(stack_a, b, c);
 	else if (b == max)
-	{
-		if (a < c)
-		{
-			sa(stack_a);
-			ra(stack_a);
-		}
-		else
-			rra(stack_a);
-	}
+		sort_three_max_mid(stack_a, a, c);
 	else
 	{
 		if (a > b)
 			sa(stack_a);
 		else
-			return;
+			return ;
 	}
 }
 
 void	sort_five(t_stack *stack_a, t_stack *stack_b)
 {
-	int	min;
-	int	pos;
-	int	moves;
-
 	while (stack_a->size > 3)
 	{
-		min = get_min(stack_a);
-		pos = get_pos(stack_a, min);
-		if (pos <= stack_a->size / 2)
-		{
-			moves = pos;
-			while (moves > 0)
-			{
-				ra(stack_a);
-				moves = moves - 1;
-			}
-		}
-		else
-		{
-			moves = stack_a->size - pos;
-			while (moves > 0)
-			{
-				rra(stack_a);
-				moves = moves - 1;
-			}
-		}
+		move_min_to_top(stack_a);
 		pb(stack_a, stack_b);
 	}
 	sort_three(stack_a);
@@ -114,6 +75,14 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_large(t_stack *stack_a, t_stack *stack_b)
 {
-		int	chunk;
-		int	pushed;
+	int	chunk;
+	int	total;
+
+	if (stack_a == NULL || stack_a->size <= 3)
+		return ;
+	total = stack_a->size;
+	chunk = get_chunk_size(total);
+	push_chunks_to_b(stack_a, stack_b, chunk, total);
+	sort_three(stack_a);
+	push_back_to_a(stack_a, stack_b);
 }

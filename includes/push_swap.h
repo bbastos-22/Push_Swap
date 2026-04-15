@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:32:58 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/03/31 20:08:01 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/04/15 22:43:05 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_stack	*init_stack(void);
 void	stack_add(t_stack *head, int val);
 void	free_stack(t_stack *stack);
 int		is_sorted(t_stack *stack);
+int		fill_stack_from_args(t_stack *stack_a, int ac, char **av);
 
 //push
 void	stack_push(t_stack *src, t_stack *dst);
@@ -72,7 +73,15 @@ int		is_valid_number(char *str);
 int		get_pos(t_stack *stack, int value);
 int		get_max(t_stack *stack);
 int		get_min(t_stack *stack);
-int		get_rank(t_stack *stack, int value);
+int		get_rank(t_stack *stack_a, t_stack *stack_b, int value);
+void	sort_three_max_top(t_stack *stack_a, int b, int c);
+void	sort_three_max_mid(t_stack *stack_a, int a, int c);
+void	move_min_to_top(t_stack *stack_a);
+int		get_chunk_size(int size);
+void	push_chunks_to_b(t_stack *stack_a, t_stack *stack_b,
+			int chunk, int total);
+void	bring_max_to_top(t_stack *stack_b);
+void	push_back_to_a(t_stack *stack_a, t_stack *stack_b);
 
 //algoritmo
 void	sort_dispatcher(t_stack *stack_a, t_stack *stack_b);
