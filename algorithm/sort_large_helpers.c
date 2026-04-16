@@ -6,7 +6,7 @@
 /*   By: bbastos- <bbastos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 18:25:01 by bbastos-          #+#    #+#             */
-/*   Updated: 2026/04/15 22:46:05 by bbastos-         ###   ########.fr       */
+/*   Updated: 2026/04/16 07:57:30 by bbastos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	get_chunk_size(int size)
 	int	chunk;
 
 	chunk = size / 11;
-	if (chunk <= 10)
-		chunk = 10;
 	if (chunk <= 100)
 		chunk = 20;
-	if (chunk > 100)
+	else if (chunk <= 500)
 		chunk = 45;
+	else
+		chunk = size / 11;
 	return (chunk);
 }
 
